@@ -1,0 +1,86 @@
+<div class="container-fluid">
+    <div class="row position-sticky bg-light p-2">
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <div class="col"><i class="bi bi-browser-edge fs-3 mx-3 text-danger"></i></div>
+                    <div class="col-md-4  mx-auto col-sm-4">
+                        <form class="d-flex justify-content-between" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" routerLink="/product" type="submit">Back</button>
+                        </form>
+                    </div>
+                </div>
+          </nav>
+    </div>
+    <div class="container-fluid mt-3">
+        <div class="col-8 col-md-8 col-sm-10 mx-auto">
+            <div class="row ms-1">
+                <ul class="list-group">
+                    <li class="my-3 list-group-item bg-light rounded-2" *ngFor="let cn of consumers;let i = index;">
+                        <div class="row">
+                            <div class="row text-center">
+                                <div class="col text-start">
+                                    <span><i class="bi bi-person-circle fs-4 me-2 text-success"></i><span class="text-dark fs-5">Product Details</span></span>
+                                </div>
+                                    <div class="col text-end">
+                                        <button class="btn btn-danger me-2" (click)="editConsumerDetails(cn,i)">Edit</button>
+                                        <button class="btn btn-primary" (click)="delteConsumerDetails(i)">Delete</button>
+                                    </div>
+                            </div>
+                            <div class="row mt-1 text-start">
+                                <div class="col-md-6 col-sm-12">
+                                    <span class="rounded-2 p-2"><b>Model:-{{cn.Model}}</b></span>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <span class="rounded-2 p-2"><b>Storage:-{{cn.HDD}}</b></span>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <span class="rounded-2 p-2"><b>RAM:-{{cn.RAM}}</b></span>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <span class="rounded-2 p-2"><b>Location:-{{cn.Location}}</b></span>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <span class="rounded-2 p-2"><b>Price:-{{cn.Price}}</b></span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid justify-content-center position-fixed top-0 mt-5 d-none" id="EditDetails">
+    <div class="col-6 border rounded-2 bg-light mx-auto mx-auto">
+        <div class="row text-end">
+            <i class="bi bi-x-square-fill fs-3 top-0" (click)="closeEditPopUp()"></i>
+        </div>
+        <form #editUsers="ngForm" (ngSubmit)="saveData(editUsers.value)">
+            <div class="row text-center">
+                <span class="fs-3">Edit details</span>
+            </div>
+            <div class="row text-center">
+                <div class="col col-md-8 col-sm-10 mx-auto">
+                    <input type="text" class="form-control" placeholder="name" name="name" autocomplete="off" ngModel required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-md-8 col-sm-10 mx-auto">
+                    <input type="text" class="form-control" placeholder="shop" name="shop" autocomplete="off" ngModel required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-md-8 col-sm-10 mx-auto">
+                    <input type="text" class="form-control" placeholder="contact" name="contact" autocomplete="off" ngModel required>
+                </div>
+            </div>
+            <div class="row my-2 text-center">
+                <div class="col mx-auto">
+                    <button type="submit" class="btn btn-outline-primary" [disabled]="editUsers.invalid">Confirm</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

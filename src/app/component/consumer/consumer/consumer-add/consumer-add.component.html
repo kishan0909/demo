@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="col-md-6 col-sm-8 border mx-auto bg-light rounded-1 mt-5">
+        <form #newUser="ngForm" (ngSubmit)="newConsumer(newUser.value)">
+            <div class="row my-2 text-center">
+                <div class="col mx-auto">
+                  <span class="fs-3">User Details</span>
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-md-6 col-sm-6 mx-auto">
+                    <input type="text" class="form-control" placeholder="name" autocomplete="off" name="name" ngModel required>
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-md-6 col-sm-6 mx-auto">
+                    <input type="text" class="form-control" placeholder="shop" autocomplete="off" name="shop" ngModel required>
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-md-6 col-sm-6 mx-auto">
+                    <input type="text" class="form-control" placeholder="contact" autocomplete="off" name="contact" ngModel required>
+                </div>
+            </div>
+            <div class="row text-center my-2">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

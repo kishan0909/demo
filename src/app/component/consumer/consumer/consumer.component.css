@@ -1,0 +1,33 @@
+.txtCls{
+    font-family: garamond,serif!important;
+}
+
+.userList{
+    background: url('/assets/images/consum.jpg') no-repeat;
+    height: 250px;
+    width: 250px;
+}
+
+.mainConsumer:hover{
+    box-shadow: 5px 5px 30px 5px rgb(180, 180, 206);
+}
+
+.mainProduct:hover{
+    box-shadow: 5px 5px 30px 5px rgb(180, 180, 206);
+}
+
+.productList{
+    background: url('/assets/images/product.jpg') no-repeat;
+    height: 215px;
+    width: 250px;
+}
+
+.btnTxt{
+    color: black!important;
+}
+
+.consumer{
+    background: url('/assets/images/addnew.jpg') no-repeat;
+    height: 215px;
+    width: 250px;
+}
